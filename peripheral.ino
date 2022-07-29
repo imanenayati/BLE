@@ -57,7 +57,7 @@ void loop() {
       mpu.update();  
       if((millis()-timer)>10)                         // print data every 10ms
       {                                                                 
-        float test = mpu.getAngleX();
+        float test = (mpu.getAngleX());
         
         timer = millis();
 
