@@ -92,9 +92,10 @@ void controlPeripheral(BLEDevice peripheral) {
   }
   
   while (peripheral.connected()) {
-    
-    float output = gestureCharacteristic.readValue();
-    Serial.println(output);
+
+    uint32_t  my_int;
+    Serial.println(gestureCharacteristic.readValue(my_int));
+   // Serial.println(output);
     if (5==5) {  
 
       Serial.println(" ");
