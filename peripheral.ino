@@ -12,7 +12,7 @@ const char* deviceServiceCharacteristicUuid = "19b10001-e8f2-537e-4f6c-d104768a1
 int gesture = -1;
 
 BLEService gestureService(deviceServiceUuid); 
-BLEFloatCharacteristic gestureCharacteristic(deviceServiceCharacteristicUuid, BLERead | BLEWrite);
+BLEByteCharacteristic gestureCharacteristic(deviceServiceCharacteristicUuid, BLERead | BLEWrite);
 
 MPU6050 mpu(Wire);
 unsigned long timer = 0;
@@ -57,7 +57,7 @@ void loop() {
       mpu.update();  
       if((millis()-timer)>10)                         // print data every 10ms
       {                                                                 
-        float test = (mpu.getAngleX());
+        byte test = (mpu.getAngleX());
         
         timer = millis();
 
